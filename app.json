@@ -1,24 +1,49 @@
 {
   "expo": {
-    "name": "TiketKonser",
-    "slug": "TiketKonser",
+    "name": "FIX YOU",
+    "slug": "fix-you",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#EDE9FE"
+    },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tiketkonser.app"
     },
     "android": {
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
-        "foregroundImage": "./assets/android-icon-foreground.png",
-        "backgroundImage": "./assets/android-icon-background.png",
-        "monochromeImage": "./assets/android-icon-monochrome.png"
-      }
+        "backgroundColor": "#EDE9FE",
+        "foregroundImage": "./assets/icon.png"
+      },
+      "package": "com.tiketkonser.app",
+      "permissions": [
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE",
+        "CAMERA"
+      ]
     },
     "web": {
-      "favicon": "./assets/favicon.png"
-    }
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Izinkan akses galeri untuk upload bukti pembayaran dan foto profil.",
+          "cameraPermission": "Izinkan akses kamera untuk foto bukti pembayaran."
+        }
+      ],
+      [
+        "expo-media-library",
+        {
+          "photosPermission": "Izinkan akses galeri untuk menyimpan e-ticket.",
+          "savePhotosPermission": "Izinkan penyimpanan foto untuk menyimpan e-ticket ke galeri."
+        }
+      ]
+    ]
   }
 }
